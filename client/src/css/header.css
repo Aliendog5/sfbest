@@ -96,10 +96,12 @@
     padding: 0;
     width: 200px;
     height: 480px;
-    position: absolute;
+    position: relative;
+    left: -200px;
     background-color: #76ac25;
     /*display: none;*/
 }
+
 .menu1 ul li{
 	float: left;
 	color: #669900;
@@ -118,3 +120,33 @@
 .menu1 ul li a:hover{
 	color: #669900;
 }
+/*quanbufenlei*/
+.dd{
+    padding-top: 8px;
+    padding-left: 15px;
+}
+.item {
+	width: 200px;
+    height: 58px;
+    position: relative;
+}
+.item h3 {
+    font-weight: normal;
+    font-size: 14px;
+    padding-top: 5px;
+    line-height: 22px;
+}
+.next{
+	width: 560px;
+	height: 480px;
+	background: yellowgreen;
+	position: absolute;
+	left: 236px;
+	top:252px;
+	z-index: 999;
+	display: none;
+}
+.item:hover .next{
+	display: block;
+}
+
