@@ -1,0 +1,124 @@
+.mainlogin{
+	width: 1000px;
+	margin: 0 auto;
+}
+
+.header2 span {
+    line-height: 70px;
+    font-size: 18px;
+    padding-left: 3px;
+    font-family: "微软雅黑";
+}
+.header2 img,.header2 span {
+    margin: 10px 0;
+    float: left;
+}
+/*content*/
+.login{
+	width: 400px;
+	height: 400px;
+	border: solid 1px #CDCDCD;
+	margin-left: 20px;
+	box-sizing: border-box;
+	padding:0 34px 34px 34px;
+	margin-bottom: 48px;
+}
+.login_main{
+	clear: both;
+}
+.pic,.login{
+	float: left;
+}
+.login_main .pic img {
+    margin-top: 32px;
+}
+.login_header span {
+    display: inline-block;
+    color: #515151;
+    font-size: 16px;
+    float: left;
+    line-height: 30px;
+}
+
+.login_header a {
+    display: inline-block;
+    float: right;
+    font-size: 12px;
+    color: #515151;
+    width: 70px;
+    height: 25px;
+    border: 1px solid #34b742;
+    line-height: 25px;
+    text-align: center;
+    margin-top: 12px;
+    background: #fff4f0;
+}
+#login_btn {
+	width: 324px;
+    display: block;
+    background: #6E9B0C;
+    height: 41px;
+    line-height: 41px;
+    font-size: 18px;
+    text-align: center;
+    color: #f2f1f1;
+    border: none;
+    margin-top: 30px;
+}
+#myform{
+	clear: both;
+}
+#myform p{
+	margin-top: 20px;
+}
+#myform input{
+	border: 1px solid #00FFFF;
+	width: 324px;
+    height: 35px;
+    font-size: 14px;
+    margin-top: 10px;
+    box-sizing: border-box;
+}
+#myform input:focus{	
+    border: 1px solid #6E9B0C;
+}
+#myform p:nth-child(1) input{
+	background: url(../img_top/ren.jpg) no-repeat 290px 6px;
+}  
+#myform p:nth-child(2) input{
+	background: url(../img_top/suo.jpg) no-repeat 290px 6px;
+}  
+#myform p:nth-child(3) input{
+	width: 106px;
+}   
+/*footer2*/
+.footer2{
+	clear: both;
+	text-align: center;
+}
+.footer2{
+    width: 1000px;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+.footer2 span {
+    display: block;
+    color: #176246;
+}
+.footer2 span a{
+    color: #666;
+}
+.footer2 span a:hover{
+    text-decoration: underline;
+}
+.footer2 span, .footer p {
+    line-height: 26px;
+    margin: 0 auto;
+    text-align: center;
+}
+.footer2 p {
+    line-height: 26px;
+}
+.footer2 p a:hover{
+    text-decoration: underline;
+}

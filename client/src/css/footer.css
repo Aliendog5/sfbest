@@ -1,0 +1,64 @@
+.up{
+	border-bottom: solid 1px #ccc;
+	height: 182px;
+	padding-top: 30px;
+}
+a{
+	color: #646464;
+}
+.hov li a:hover{
+	color: #A9CF00;
+}
+.up ul{
+	float: left;
+}
+.up ul li{
+	line-height: 26px;
+}
+p{
+	font-size: 14px;
+	font-weight: bold;
+	color: #707070;
+}
+.hov{
+	margin-left: 70px;
+}
+.tel_ewm{
+	margin-left: 30px;
+}
+.gf_ewm{
+	margin-left: 40px;
+}
+.aa{
+	margin-right: 20px;
+}
+.aa li:nth-child(2){
+	font-size: 20px;
+	color: #646464;
+}
+.aa li:nth-child(3){
+	color: #969696;
+}
+.ewm li{
+	margin-top: 10px;
+}
+/*下面的尾部*/
+.low{
+	margin-top: 16px;
+}
+.low .img,.low .uls{
+	float: left;	
+}
+.uls ul{
+	margin-left: 10px;
+}
+.uls ul li{
+	float: left;
+	margin-right: 20px;
+}
+.low a{
+	color: #646464;
+}
+.low li{
+	color: #969696;
+}

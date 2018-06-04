@@ -1,0 +1,120 @@
+
+.topBanner{
+	width: 100%;
+	height: 80px;
+	background:url(../img_top/top1.jpg) no-repeat top center;display: block;
+}
+.two{
+	width: 100%;
+	/*background: red;*/
+}
+.topMenu{
+	width: 100%;height: 33px;
+	line-height: 33px;
+	background: #F7F7F7;
+	border-bottom: solid 1px #eee;
+}
+.topHead{
+	height: 104px;
+}
+/*nav*/
+.topNav{
+	width: 100%;
+    height: 32px;
+    border-bottom: 2px solid #679800;
+}
+/*---*/
+.mLeft{
+	float: left;
+}
+.mLeft li{
+	float: left;
+}
+.mRight{
+	float: right;
+}
+.mRight li{
+	float: left;
+	margin-right: 20px;
+}
+/*head*/
+.pic_log,.gif,.form{
+	float: left;
+	margin-right: 28px;
+}
+.form input{
+	border: 1px solid #669900;
+    width: 425px;
+    height: 34px;
+    padding: 0 0 0 4px;
+    vertical-align: middle;
+    float: left;
+}
+.form button{
+	margin: 0px;
+    height: 36px;
+    width: 80px;
+    cursor: pointer;
+    float: left;
+    vertical-align: middle;
+    border: 0;
+    background: #669900;
+    color: #FFF;
+}
+.pic_log{
+	margin-top: 10px;
+}
+.gif{
+	margin-top: 16px;
+}
+.form{
+	margin-top: 30px;
+}
+/*nav*/
+.dt,.dd{
+	float: left;
+	overflow: hidden;
+}
+.dt a{
+	height: 32px;
+    line-height: 32px;
+    display: block;
+    margin: 0px;
+    padding: 0px;
+    color: #fff;
+    font-size: 14px;
+    font-family: Microsoft YaHei;
+    font-weight: bold;
+    width: 200px;
+    text-align: center;
+    text-decoration: none;
+    background: #669900;   
+}
+#allSort {
+    margin-top:34px ;
+    z-index: 998;
+    padding: 0;
+    width: 200px;
+    height: 480px;
+    position: absolute;
+    background-color: #76ac25;
+    /*display: none;*/
+}
+.menu1 ul li{
+	float: left;
+	color: #669900;
+	margin-right: 50px;
+}
+.menu1 ul li:nth-child(1) a{
+	color: #669900;
+	margin-left: 25px;
+}
+.menu1 ul li a{
+	font-weight: bold;
+	font-size: 14px;
+	color: #333;
+	line-height: 32px;
+}
+.menu1 ul li a:hover{
+	color: #669900;
+}

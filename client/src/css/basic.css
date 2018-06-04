@@ -1,0 +1,27 @@
+/* CSS Document */
+html,body{
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+}
+body,html,div,span,i,ul,li,ol,dl,dt,dd,img,p,form,input,table,tr,td,h1,h2,h3,h4,h5,h6,i,em,strong,b{ margin:0; padding:0; }
+img { border:none; }
+input{ outline:none;}
+i,em,b,strong,h1,h2,h3,h4,h5,h6{ font-style:normal; font-weight:normal; }
+
+ul li, ol li{ list-style:none; } 
+body { color:#333; font:12px/20px "微软雅黑","Arial Narrow",HELVETICA; background:#fff;}
+a{ color:#666; text-decoration:none; }
+/*a:hover{ color:#A9CF00;}*/
+
+/*.ind{text-indent:2em} 
+.noborder{border:0;}
+.mt10{ margin-top:10px;}*/
+.clearfix:after{ content:"."; display:block; clear:both; visibility:hidden; overflow:hidden; font-size:0; width:0;}
+.main{
+	width: 1192px;
+	height: 100%;
+	margin: 0 auto;
+	background: cyan;
+}
+
