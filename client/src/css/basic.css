@@ -4,6 +4,7 @@ html,body{
 	height: 100%;
 	box-sizing: border-box;
 }
+
 body,html,div,span,i,ul,li,ol,dl,dt,dd,img,p,form,input,table,tr,td,h1,h2,h3,h4,h5,h6,i,em,strong,b{ margin:0; padding:0; }
 img { border:none; }
 input{ outline:none;}
@@ -22,6 +23,6 @@ a{ color:#666; text-decoration:none; }
 	width: 1192px;
 	height: 100%;
 	margin: 0 auto;
-	background: cyan;
+	/*background: cyan;*/
 }
 

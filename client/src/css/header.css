@@ -73,7 +73,6 @@
 /*nav*/
 .dt,.dd{
 	float: left;
-	overflow: hidden;
 }
 .dt a{
 	height: 32px;
@@ -99,9 +98,19 @@
     position: relative;
     left: -200px;
     background-color: #76ac25;
+	padding-top: 8px;
+	padding-left: 15px;
+	box-sizing: border-box;
     /*display: none;*/
 }
-
+.all {
+	overflow: hidden;
+}
+.menu1{
+	position: relative;
+	left: 217px;
+    top: -511px;
+}
 .menu1 ul li{
 	float: left;
 	color: #669900;
@@ -139,14 +148,74 @@
 .next{
 	width: 560px;
 	height: 480px;
-	background: yellowgreen;
+	background: url("../img_top/bjt.jpg") bottom no-repeat yellowgreen;
 	position: absolute;
-	left: 236px;
-	top:252px;
+	left: 185px;
+	top:-8px;
 	z-index: 999;
 	display: none;
+	opacity: 0.98;
+}
+.cat-sort {
+	width: 542px;
+	height: 248px;
+	padding: 8px 0 24px 10px;
+}
+.cat-sort dl {
+	overflow: hidden;
+	zoom: 1;
+	padding: 1px 0 0 0;
+}
+.cat-sort dt {
+	width: 80px;
+	padding-right: 10px;
+	float: left;
+	text-align: right;
+	height: 18px;
+	line-height: 18px;
+	margin: 4px 0;
+	color: #76ac25;
+}
+.cat-sort dt a {
+	color: #76ac25;
+}
+.cat-sort dt a:hover{
+	text-decoration: underline;
+}
+#booksort .cat-sort dd {
+	overflow: hidden;
+	zoom: 1;
+}
+.cat-sort dd a {
+	float: left;
+	white-space: nowrap;
+	display: block;
+	text-decoration: none;
+	font-size: 12px;
+	height: 18px;
+	line-height: 18px;
+	margin: 4px 0px;
+	text-align: left;
+	padding: 0px 6px;
+	border-left: 1px solid #ccc;
+	color: #666;
+}
+.cat-sort dd a:hover{
+	color: #76ac25;
+}
+.zuobian{
+	padding-left: 15px;
 }
 .item:hover .next{
 	display: block;
+}
+.item:hover{
+	background: #fff;
+}
+.item:hover .zuobian a{
+	color:#76ac25 ;
+}
+.item .zuobian a:hover{
+	text-decoration: underline;
 }
 

@@ -6,13 +6,10 @@
  * Time: 9:30
  */
 include "config.php";
-
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     if(!empty($_REQUEST["uname"]) && !empty($_REQUEST["upwd"])){
-
         //1.准备sql语句
-        $inserSQL = "INSERT INTO sfbest.`userinfo` (`u_name`,`u_pwd`)VALUES(?,?,?,?,?)";
-
+        $inserSQL = "INSERT INTO sfbest.`userinfo` (`u_name`,`u_pwd`)VALUES(?,?)";
         //2.预执行
         $stmt = $conn->prepare($inserSQL);
         $stmt->bind_param("ss", $_REQUEST["uname"], $_REQUEST["upwd"]);
