@@ -5,12 +5,13 @@ require(["config"], function() {
 			$("#myform").validate({
 				submitHandler: function() {
 					if($.idcode.validateCode()) {
+	console.log(111)
 						$.ajax({
 							type: "post",
-							url: "",
+							url: "http://127.0.0.1/sfbest/server/reg.php",
 							data: {
 								uname: $("[name='uname']").val(),
-								upwd: $.md5($("[name=upwd]").val())
+								upwd: $.md5($("[name='upwd']").val())
 							},
 							dateType: "json"
 						}).then(function(res) {
@@ -33,12 +34,15 @@ require(["config"], function() {
 						'rangelength': [6, 20],
 						remote: {
 							type: "get",
-							url: "http://127.0.0.1/Shopping/server/IsExistUser.php"
+							url: "http://127.0.0.1/sfbest/server/checkUserName.php"
 						}
 					},
 					upwd: {
 						'required': true,
 						'rangelength': [6, 20],
+					},
+					upwd1:{
+						equalTo:"#upwd"
 					}
 				},
 				messages: {
@@ -50,6 +54,9 @@ require(["config"], function() {
 					upwd: {
 						'required': "请输入密码",
 						'rangelength': "密码长度为6-20"
+					},
+					upwd1:{
+						equalTo:"两次密码不一致"
 					}
 				}
 			})

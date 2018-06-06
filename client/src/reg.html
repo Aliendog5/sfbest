@@ -8,42 +8,45 @@
 		<title>Document</title>
 		<link rel="stylesheet" type="text/css" href="css/basic.css" />
 		<link rel="stylesheet" type="text/css" href="css/reg.css" />
+		<script src="js/lib/require.js" data-main="js/reg"></script>
 	</head>
 
 	<body>
 		<div class="header2 mainlogin">
 			<a href="index.html"><img src="img_top/login-head.png" border="0"><span>欢迎注册</span></a>
 		</div>
-		
+
 		<div class="tabBox mainlogin">
 			<span>个人用户</span>
 			<div class="login">已有账号，立即
 				<a href="login.html">登录</a>
 			</div>
 		</div>
-		
+
 		<!--//表单-->
 		<div class="form">
 			<form id="myform">
 				<p>
-					<span><em> * </em>账户名: </span><input type="" name="uname" />
+					<span><em> * </em>账户名: </span><input class="long" type="text" name="uname" />
 				</p>
 				<p>
-					<span><em> * </em>登录密码: </span><input type="" name="upwd" />
+					<span><em> * </em>登录密码: </span><input class="long" type="text" name="upwd" id="upwd" />
 					<div class="mima" id="pwdStrong">
 						<font style="font-size:12px;">安全程度：</font><em class="default">弱</em><em class="default">中</em><em class="default">强</em>
 					</div>
 				</p>
 				<p>
-					<span><em> * </em>确认密码: </span><input type="" name="upwd2" />
+					<span><em> * </em>确认密码: </span><input class="long" type="text" name="upwd1" />
 				</p>
-				<p>
-					<span><em> * </em>验证码: </span><input type="" name="uname" />
-				</p>
+				<div>
+					<span style="display: inline-block;"><em> * </em>验证码:</span>
+					<input style="width: 106px;" type="text" id="Txtidcode" class="txtVerification">
+					<span id="idcode" style="position: relative;top: 42px;left: -65px;"></span>
+				</div>
 				<!--<p>我已阅读并同意《顺丰优选用户注册协议》</p>-->
 				<button>立即注册</button>
 			</form>
-			<img class="laba" src="img_top/laba.png"/>
+			<img class="laba" src="img_top/laba.png" />
 		</div>
 		<!--尾部-->
 		<div class="footer2">

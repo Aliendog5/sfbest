@@ -17,13 +17,13 @@ ul,li {list-style: none;}
 #btnDetail{width: 160px;clear: both;height: 45px;display: block;background: #669900;line-height: 45px;color: #fff;font-size: 18px;/*outline: none;*/}
 /**/
 /*.pAmount{width:81px;float:left;margin-right:10px;overflow:hidden;display:inline-block;}*/
-#points-sf li{float: left;}
+#points-sf li{float: left;margin-right: 20px;}
 .hcBox{clear: both;}
 .hcBox .hcTitle {height: 18px;padding-top: 6px;color: #659a02;font-size: 14px;text-align: center;overflow: hidden;}
 .pAmount span{float:left;}
 .pAmount{width: 222px;overflow: hidden;background-color: #ffffff;margin-bottom: 30px;}
 .pItemsSide{width: 222px;height: 530px;}
-.hcBox .hcImg {height: 32px;padding-top: 10px;margin-left:50px;}
+.hcBox .hcImg {height: 32px;padding-top: 10px;margin-left:75px;}
 .pAmount .text{width:53px;height:43px;border:1px solid #dadada;overflow:hidden;font-size:18px;text-align:center;line-height:43px;color:#6b6b6b;font-family:å®‹ä½“; }
 .pAmount a{height:21px;width:25px;border-top:1px solid #dadada;border-right:1px solid #dadada;text-align:center;line-height:21px;display:block;overflow:hidden;text-decoration:none;cursor:pointer;color:#6b6b6b;font-size:14px;font-family:å®‹ä½“;overflow:hidden;}
 .pAmount a:hover{text-decoration:none;}

@@ -98,7 +98,7 @@ html,body{
 	border: 1px solid #CDCDCD;
 	margin-top: 10px;
 }
-#myform p span{
+#myform p span,#myform div span{
 	display: inline-block;
 	width: 118px;
 	height: 38px;
@@ -107,7 +107,7 @@ html,body{
 	color: #515151;
 	margin-right: 20px;
 }
-#myform p em{
+#myform p em,#myform div em{
 	color: red;
 }
 #myform button{
@@ -122,6 +122,7 @@ html,body{
 #myform input:focus{	
     border: 1px solid #6E9B0C;
 }
+
 .mima{
 	height: 30px;
 	margin-left: 190px;

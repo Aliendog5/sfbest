@@ -5,7 +5,7 @@ require(["config"], function() {
 			submitHandler: function() {
 				if($.idcode.validateCode()) {
 					$.ajax({
-						url: "",
+						url: "http://127.0.0.1/sfbest/server/login.php",
 						data: {
 							uname: $("[name=uname]").val(),
 							upwd: $.md5($("[name=upwd]").val())
@@ -14,8 +14,8 @@ require(["config"], function() {
 						dataType: "json"
 					}).done(function(res) {
 						if(res.status == 1) {
-//							sessionStorage.setItem("userInfo", JSON.stringify(res.data));
-//							window.location.assign("goodsInof.html")
+							sessionStorage.setItem("userInfo", JSON.stringify(res.data));
+							window.location.assign("homepage.html")
 						}
 
 						alert(res.msg);

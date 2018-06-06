@@ -1,18 +1,55 @@
 require(["config"], function() {
-	require(["jquery"], function() {
+	require(["jquery","jquery.cookie"], function() {
 		function getStyle(obj, attr) {
 			if(window.getComputedStyle) {
 				return window.getComputedStyle(obj, null)[attr];
 			}
 			return obj.currentStyle[attr];
 		}
-		$(function() {
+		$(function() {			
+			//获取页面数据->数据库
+			var id = window.location.href.split("?")[1].split("=")[1];
+			$.ajax({
+				type:"post",
+				url:"http://127.0.0.1/sfbest/server/goods2.php",
+				data:{
+					pid:id
+				},
+				dataType:"json"
+			}).then(function(res){
+				console.log(res)
+				$(".right h1").html(res[0].p_tit);console.log(res[0].p_tit)
+				$("#d_price span").html(res[0].p_price);
+				$("#smallImg img")[0].src=res[0].p_img;
+			})
+			//点击加入购物车			
+			$("#btnDetail").on("click", function() {
+				var cur=sessionStorage.getItem("userInfo");
+				if(cur!=null){
+					//已登录,存数据库
+					cur=JSON.parse(sessionStorage.getItem("userInfo"));
+					$.ajax({
+						type:"post",
+						url:"http://127.0.0.1/sfbest/server/car.php",
+						data:{
+							u_id:cur.uid,
+							p_id:id,
+							c_num:$("#number_265991").val(),
+							c_status:1
+						},
+						dataType:"json"
+					}).then(function(res){
+						alert(res.msg);
+					})
+				}else{
+					//没登录,就存cookie
+				}
+			})
 			//菜单切换
 			$(".qh ul li:eq(0)").css({
 				background: "#669900",
 				color: "#fff"
 			});
-			console.log($(".qh ol li:eq(0)"))
 			$(".qh ul li").on("click", function() {
 				console.log($(this).index());
 				$(this).css({
@@ -25,18 +62,17 @@ require(["config"], function() {
 				$(this).parent().siblings("ol").find("li").eq($(this).index()).show().siblings("li").hide();
 			})
 			//加减按钮
-			$("#add-sell-num").on("click",function(){
-				$(this).parent().prev("span").find("input").val($(this).parent().prev("span").find("input").val()-0+1);
+			$("#add-sell-num").on("click", function() {
+				$(this).parent().prev("span").find("input").val($(this).parent().prev("span").find("input").val() - 0 + 1);
 			})
-			$("#reduce-sell-num").on("click",function(){
-				if($(this).parent().prev("span").find("input").val()<=1){
+			$("#reduce-sell-num").on("click", function() {
+				if($(this).parent().prev("span").find("input").val() <= 1) {
 					$(this).parent().prev("span").find("input").val(1);
-				}else{
-					$(this).parent().prev("span").find("input").val($(this).parent().prev("span").find("input").val()-1);
-				}				
+				} else {
+					$(this).parent().prev("span").find("input").val($(this).parent().prev("span").find("input").val() - 1);
+				}
 			})
 			//放大镜
-			console.log(222)
 			var $smallImg = $("#smallImg"); //小图
 			var $bigImg = $("#bigImg"); //大图
 			var $smallArea = $("#smallArea"); //小区域
@@ -46,7 +82,6 @@ require(["config"], function() {
 			$smallArea.height(($smallImg.height() / $bigImg.height()) * $bigArea.height());
 			//鼠标移入小图
 			$smallImg.on("mouseenter", function() {
-				console.log(1111)
 				$smallArea.show();
 				$bigArea.css("display", "block");
 				//移动
@@ -83,22 +118,29 @@ require(["config"], function() {
 				$smallArea.hide();
 				$bigArea.hide();
 				$(document).off("mousemove");
-
 			})
 			//点击小图,将小图的src属性给大图的src 
-			var slis=$("#small ul li img");console.log(slis)
-			var big=document.querySelector("#smallImg img");
-			var bigA=document.querySelector("#bigArea img");
-			$("#small li").eq(0).css({border:"solid 1px #669900"}).siblings("li").css({border:"solid 1px #ccc"})
-			for(var m = 0; m <slis.length; m++) {
+			var slis = $("#small ul li img");
+			var big = document.querySelector("#smallImg img");
+			var bigA = document.querySelector("#bigArea img");
+			$("#small li").eq(0).css({
+				border: "solid 1px #669900"
+			}).siblings("li").css({
+				border: "solid 1px #ccc"
+			})
+			for(var m = 0; m < slis.length; m++) {
 				slis[m].index = m; //slis[m].index=m;for循环不会等待点击,所以需要留住m的值
 				slis[m].onclick = function() {
-					console.log(slis[this.index].src);
 					big.src = slis[this.index].src;
 					bigA.src = slis[this.index].src;
-					$(this).parent("li").css({border:"solid 1px #669900"}).siblings("li").css({border:"solid 1px #ccc"})
+					$(this).parent("li").css({
+						border: "solid 1px #669900"
+					}).siblings("li").css({
+						border: "solid 1px #ccc"
+					})
 				}
 			}
+
 			//入口括号	
 		})
 

@@ -10,13 +10,17 @@ define("config",function(){
             "idcode":["lib/idcode/jquery.idcode"],
             "jquery.validation":["lib/jquery-validation/jquery.validate"],
             "additional.methods":["lib/jquery-validation/additional-methods"],
-            "jquery.cookie":["lib/jquery-cookie/jquery.cookie"]
+            "jquery.cookie":["lib/jquery-cookie/jquery.cookie"],
+            "jquery.lazyload":["lib/jquery.lazyload"]
         },
         shim:{
             "md5":{
                 deps:["jquery"]
             },
             "idcode":{
+                deps:["jquery"]
+            },  
+            "jquery.lazyload":{
                 deps:["jquery"]
             }
         }

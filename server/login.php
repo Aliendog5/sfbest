@@ -22,15 +22,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $stmt->execute();
         $result = $stmt->get_result();
 
-
         $resList = Array("status" => 0, "msg" => "用户名或密码错误");
         if($result->num_rows >= 1){
             $resList["status"] = 1;
             $resList["msg"] = "登录成功";
 
             $rowData = $result->fetch_array();
-
-
             $resArray=Array();
             $resArray["uid"]=$rowData["u_id"];
             $resArray["uname"]=$rowData["u_name"];

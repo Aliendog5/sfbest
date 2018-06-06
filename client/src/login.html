@@ -8,6 +8,7 @@
 		<title>Document</title>
 		<link rel="stylesheet" type="text/css" href="css/basic.css" />
 		<link rel="stylesheet" type="text/css" href="css/login.css" />
+		<script src="js/lib/require.js" data-main="js/login"></script>
 	</head>
 
 	<body>
@@ -27,19 +28,21 @@
 				</div>
 
 				<form id="myform">
-					
+
 					<p>
 						<span>手机/验证邮箱/用户名</span>
 						<label><input type="text" name="uname"/></label>
 					</p>
-					
+
 					<p>
 						<span>登录密码</span>
 						<label><input type="text" name="upwd"/></label>
 					</p>
-					<p> 
-						<label><input type="text" name="yzm"/></label>验证码
-					</p>
+					<p>
+						<input type="text" id ="Txtidcode" class ="txtVerification">
+						<span id="idcode" style="display:inline-block;margin-left: 20px;"></span>  
+						<a href="#" style="color: #659A02;text-decoration: underline;margin-left: 20px;">看不清你就刷新 </a>
+        			</p>
 					<button id="login_btn">登录</button>
 				</form>
 			</div>
