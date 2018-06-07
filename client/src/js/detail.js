@@ -1,48 +1,72 @@
 require(["config"], function() {
-	require(["jquery","jquery.cookie"], function() {
+	require(["jquery", "jquery.cookie"], function() {
 		function getStyle(obj, attr) {
 			if(window.getComputedStyle) {
 				return window.getComputedStyle(obj, null)[attr];
 			}
 			return obj.currentStyle[attr];
 		}
-		$(function() {			
+		$(function() {
+
 			//获取页面数据->数据库
 			var id = window.location.href.split("?")[1].split("=")[1];
 			$.ajax({
-				type:"post",
-				url:"http://127.0.0.1/sfbest/server/goods2.php",
-				data:{
-					pid:id
+				type: "post",
+				url: "http://127.0.0.1/sfbest/server/goods2.php",
+				data: {
+					pid: id
 				},
-				dataType:"json"
-			}).then(function(res){
+				dataType: "json"
+			}).then(function(res) {
 				console.log(res)
-				$(".right h1").html(res[0].p_tit);console.log(res[0].p_tit)
+				$(".right h1").html(res[0].p_tit);
+				console.log(res[0].p_tit)
 				$("#d_price span").html(res[0].p_price);
-				$("#smallImg img")[0].src=res[0].p_img;
+				$("#smallImg img")[0].src = res[0].p_img;
 			})
 			//点击加入购物车			
 			$("#btnDetail").on("click", function() {
-				var cur=sessionStorage.getItem("userInfo");
-				if(cur!=null){
+				var data = {
+					cp_id: id,
+					cp_name: $(".right h1").text(),
+					cp_price: $("#d_price span").text(),
+					cp_num: $("#number_265991").val(),
+					cp_img: $("#smallImg img")[0].src
+				}
+				console.log(data)
+				var cur = sessionStorage.getItem("userInfo");
+				if(cur != null) {
 					//已登录,存数据库
-					cur=JSON.parse(sessionStorage.getItem("userInfo"));
+					cur = JSON.parse(sessionStorage.getItem("userInfo"));
 					$.ajax({
-						type:"post",
-						url:"http://127.0.0.1/sfbest/server/car.php",
-						data:{
-							u_id:cur.uid,
-							p_id:id,
-							c_num:$("#number_265991").val(),
-							c_status:1
+						type: "post",
+						url: "http://127.0.0.1/sfbest/server/car.php",
+						data: {
+							u_id: cur.uid,
+							p_id: id,
+							c_num: $("#number_265991").val(),
+							c_status: 1
 						},
-						dataType:"json"
-					}).then(function(res){
+						dataType: "json"
+					}).then(function(res) {
 						alert(res.msg);
 					})
-				}else{
+				} else {
 					//没登录,就存cookie
+					var cookieArr = JSON.parse($.cookie("nologin") || '[]');
+					console.log(cookieArr)
+					var flag = true;
+					for(var i = 0; i < cookieArr.length; i++) {
+						if(cookieArr[i]["cp_id"] == data["cp_id"]) {
+							cookieArr[i]["cp_num"] = Number(data["cp_num"]) + Number(cookieArr[i]["cp_num"]);
+							flag = false;
+						}
+					}
+					if(flag) {
+						cookieArr.push(data);
+					}
+					alert("操作成功");
+					$.cookie("nologin", JSON.stringify(cookieArr), 10)
 				}
 			})
 			//菜单切换
@@ -140,7 +164,21 @@ require(["config"], function() {
 					})
 				}
 			}
-
+			$(".header").load("header.html");
+			$(".footer").load("footer.html");
+			
+			
+			
+			//当前用户名
+	var cur = sessionStorage.getItem("userInfo");
+	if(cur != null) {
+		cur = JSON.parse(sessionStorage.getItem("userInfo"));
+		$(".mRight li").eq(0).html(`${cur.uname} 欢迎回来! [<a id="aaa" href="#">退出</a>]`);
+	}
+	$("body").delegate("#aaa", "click", function() {
+		sessionStorage.clear();
+		window.location.reload();
+	})
 			//入口括号	
 		})
 

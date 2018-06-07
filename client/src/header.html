@@ -6,9 +6,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 		<title>Document</title>
-		<link rel="stylesheet" type="text/css" href="css/header.css" />
-		<!--<script src="js/lib/require.js" data-main="js/header"></script>-->
+		<link rel="stylesheet" type="text/css" href="css/header.css" />		
 		<script src="jquery.js"></script>
+		<script src="js/lib/jquery-cookie/jquery.cookie.js"></script>
 		<script src="js/header.js"></script>
 	</head>
 
@@ -26,30 +26,13 @@
 					</ul>
 
 					<ul class="mRight">
-	
-			<!--<?php
-session_start();
-
-if (!empty($_SESSION["currentLogin"])) {
-    $row = $_SESSION["currentLogin"];
-    $str = "当前的登陆者：<a href='javascript:void(0)'>" . $row["uname"] . "</a>";
-    $str.= " <a id='exit' href='javascript:void(0)'>退出登陆</a>";
-    print_r($str);
-    print_r('<input id="uid" type="hidden" value="'.$row["u_id"].'">');
-} else {
-	$str="<span><a href='denglu.html'>登录</a></span>";
-	$str.="<span><a href='zhuce.html'>注册</a></span>";
-	print_r($str);
-}
-?>-->
-						<li style="position: relative;" class="login" id="login">嘿，欢迎来顺丰优选！
-							<div>
-								<a href="login.html">请登录</a> |
-								<i class="reg">
+						<li style="position: relative;" class="login" id="login">
+							嘿，欢迎来顺丰优选！<a href="login.html">请登录</a> |
+							<i class="reg">
 								<a href="reg.html">免费注册</a>
 								<a class="newwords">新会员注册即送优惠券大礼包</a>
 							</i>
-							</div>
+							
 						</li>
 
 						<li>
@@ -107,124 +90,31 @@ if (!empty($_SESSION["currentLogin"])) {
 						<div class="dt">
 							<a href="javascript:void(0)">精选商品分类</a>
 						</div>
-						<div class="dd" id="allSort">
-							<!--1-->
-							<div class="item">
-								<div class="zuobian">
-									<h3><a href="#">肉类海鲜</a></h3>
-									<a href="#">牛肉</a>
-									<a href="#">羊肉</a>
-									<a href="#">虾</a>
-									<a href="#">鱼</a>
-								</div>
-								<div class="next">
-									<div class="cat-sort">
-										<dl>
-											<dt>
-												<strong>
-													<a name="sfbest_Uhead_Uhead_menu_category1-1" class="trackref" href="/mall/7423-0-0-0-0-2-0-0-0-0-0.html" target="_blank">精品肉类</a>
-												</strong>
-											</dt>
-											<dd>
-												<a name="sfbest_Uhead_Uhead_menu_category1-2" class="trackref" href="/mall/7543-0-0-0-0-2-0-0-0-0-0.html">牛肉</a>
-												<a name="sfbest_Uhead_Uhead_menu_category1-3" class="trackref" href="/mall/7547-0-0-0-0-2-0-0-0-0-0.html">羊肉</a>
-												<a name="sfbest_Uhead_Uhead_menu_category1-4" class="trackref" href="/mall/7545-0-0-0-0-2-0-0-0-0-0.html">猪肉</a>
-												<a name="sfbest_Uhead_Uhead_menu_category1-5" class="trackref" href="/mall/7549-0-0-0-0-2-0-0-0-0-0.html">禽类</a>
-												<a name="sfbest_Uhead_Uhead_menu_category1-8" class="trackref" href="/mall/7557-0-0-0-0-2-0-0-0-0-0.html">加工肉类</a>
-											</dd>
-										</dl>
-										<dl>
-											<dt>
-												<strong>
-													<a name="sfbest_Uhead_Uhead_menu_category1-10" class="trackref" href="/mall/7421-0-0-0-0-2-0-0-0-0-0.html">海鲜水产</a>
-												</strong>
-											</dt>
-											<dd>
-												<a name="sfbest_Uhead_Uhead_menu_category1-11" class="trackref" href="/mall/7525-0-0-0-0-2-0-0-0-0-0.html">虾</a>
-												<a name="sfbest_Uhead_Uhead_menu_category1-12" class="trackref" href="/multi/7527_7703-0-0-0-0-2-0-0-0-0-0.html">鱼</a>
-												<a name="sfbest_Uhead_Uhead_menu_category1-14" class="trackref" href="/multi/7529_7531-0-0-0-0-2-0-0-0-0-0.html">蟹/贝类</a>
-												<a name="sfbest_Uhead_Uhead_menu_category1-15" class="trackref" href="/mall/8621-0-0-0-0-2-0-0-0-0-0.html">小龙虾</a>
-												<a name="sfbest_Uhead_Uhead_menu_category1-16" class="trackref" href="/multi/7533_7535-0-0-0-0-2-0-0-0-0-0.html">参鲍</a>
-												<a name="sfbest_Uhead_Uhead_menu_category1-17" class="trackref" href="/mall/7541-0-0-0-0-2-0-0-0-0-0.html">加工水产</a>
-												<a name="sfbest_Uhead_Uhead_menu_category1-18" class="trackref" href="/mall/8061-0-0-0-0-2-0-0-0-0-0.html">其他水产</a>
-												<a name="sfbest_Uhead_Uhead_menu_category1-19" class="trackref" href="/mall/8059-0-0-0-0-2-0-0-0-0-0.html">水产礼盒</a>
-												<a name="sfbest_Uhead_Uhead_menu_category1-20" class="trackref" href="/multi/7697_7701-0-0-0-0-2-0-0-0-0-0.html">卡券</a>
-											</dd>
-										</dl>
-									</div>
-								</div>
-							</div>
-							<!--2-->
-							<div class="item">
-								<div class="zuobian">
-									<h3><a href="#">肉类海鲜</a></h3>
-									<a href="#">牛肉</a>
-									<a href="#">羊肉</a>
-									<a href="#">虾</a>
-									<a href="#">鱼</a>
-								</div>
-								<div class="next">
-									<div class="cat-sort">
-										<dl>
-											<dt>
-												<strong>
-													<a name="sfbest_Uhead_Uhead_menu_category1-1" class="trackref" href="/mall/7423-0-0-0-0-2-0-0-0-0-0.html" target="_blank">精品肉类</a>
-												</strong>
-											</dt>
-											<dd>
-												<a name="sfbest_Uhead_Uhead_menu_category1-2" class="trackref" href="/mall/7543-0-0-0-0-2-0-0-0-0-0.html">牛肉</a>
-												<a name="sfbest_Uhead_Uhead_menu_category1-3" class="trackref" href="/mall/7547-0-0-0-0-2-0-0-0-0-0.html">羊肉</a>
-												<a name="sfbest_Uhead_Uhead_menu_category1-4" class="trackref" href="/mall/7545-0-0-0-0-2-0-0-0-0-0.html">猪肉</a>
-												<a name="sfbest_Uhead_Uhead_menu_category1-5" class="trackref" href="/mall/7549-0-0-0-0-2-0-0-0-0-0.html">禽类</a>
-												<a name="sfbest_Uhead_Uhead_menu_category1-8" class="trackref" href="/mall/7557-0-0-0-0-2-0-0-0-0-0.html">加工肉类</a>
-											</dd>
-										</dl>
-										<dl>
-											<dt>
-												<strong>
-													<a name="sfbest_Uhead_Uhead_menu_category1-10" class="trackref" href="/mall/7421-0-0-0-0-2-0-0-0-0-0.html">海鲜水产</a>
-												</strong>
-											</dt>
-											<dd>
-												<a name="sfbest_Uhead_Uhead_menu_category1-11" class="trackref" href="/mall/7525-0-0-0-0-2-0-0-0-0-0.html">虾</a>
-												<a name="sfbest_Uhead_Uhead_menu_category1-12" class="trackref" href="/multi/7527_7703-0-0-0-0-2-0-0-0-0-0.html">鱼</a>
-												<a name="sfbest_Uhead_Uhead_menu_category1-14" class="trackref" href="/multi/7529_7531-0-0-0-0-2-0-0-0-0-0.html">蟹/贝类</a>
-												<a name="sfbest_Uhead_Uhead_menu_category1-15" class="trackref" href="/mall/8621-0-0-0-0-2-0-0-0-0-0.html">小龙虾</a>
-												<a name="sfbest_Uhead_Uhead_menu_category1-16" class="trackref" href="/multi/7533_7535-0-0-0-0-2-0-0-0-0-0.html">参鲍</a>
-												<a name="sfbest_Uhead_Uhead_menu_category1-17" class="trackref" href="/mall/7541-0-0-0-0-2-0-0-0-0-0.html">加工水产</a>
-												<a name="sfbest_Uhead_Uhead_menu_category1-18" class="trackref" href="/mall/8061-0-0-0-0-2-0-0-0-0-0.html">其他水产</a>
-												<a name="sfbest_Uhead_Uhead_menu_category1-19" class="trackref" href="/mall/8059-0-0-0-0-2-0-0-0-0-0.html">水产礼盒</a>
-												<a name="sfbest_Uhead_Uhead_menu_category1-20" class="trackref" href="/multi/7697_7701-0-0-0-0-2-0-0-0-0-0.html">卡券</a>
-											</dd>
-										</dl>
-									</div>
-								</div>
-							</div>
-							<!--3-->
+						<div class="menu1">
+							<ul>
+								<li>
+									<a href="#">首页</a>
+								</li>
+								<li>
+									<a href="#">优选生鲜</a>
+								</li>
+								<li>
+									<a href="#">优选厨房</a>
+								</li>
+								<li>
+									<a href="#">优选国际</a>
+								</li>
+								<li>
+									<a href="#">企业专区</a>
+								</li>
+								<li>
+									<a href="#">优选会员</a>
+								</li>
+							</ul>
 						</div>
 					</div>
-					<div class="menu1">
-						<ul>
-							<li>
-								<a href="#">首页</a>
-							</li>
-							<li>
-								<a href="#">优选生鲜</a>
-							</li>
-							<li>
-								<a href="#">优选厨房</a>
-							</li>
-							<li>
-								<a href="#">优选国际</a>
-							</li>
-							<li>
-								<a href="#">企业专区</a>
-							</li>
-							<li>
-								<a href="#">优选会员</a>
-							</li>
-						</ul>
-					</div>
+					
+					
 				</div>
 			</div>
 

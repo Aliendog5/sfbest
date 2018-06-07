@@ -1,25 +1,31 @@
 require(["config"], function() {
-	require(["jquery","jquery.lazyload"], function() {
+	require(["jquery", "jquery.lazyload"], function() {
 		$(document).ready(function() {
 			$(".header").load("header.html");
 			$(".footer").load("footer.html");
+			//回到顶部
+			$("#top").click(function() {
+				$("html,body").animate({
+					scrollTop: 0
+				}, 500);
+			});
 			//发送请求数据到页面
 			$.ajax({
-				type:"get",
-				url:"http://127.0.0.1/sfbest/server/goods.php",
-				dataType:"json"
-			}).then(function(res){
+				type: "get",
+				url: "http://127.0.0.1/sfbest/server/goods.php",
+				dataType: "json"
+			}).then(function(res) {
 				console.log(res)
-				for(var i=0;i<res.length;i++){
+				for(var i = 0; i < res.length; i++) {
 					$("#bigPerfect li").eq(i).find(".a_buy").html(res[i].p_tit);
-					$("#bigPerfect li").eq(i).find(".a_price").html("¥"+res[i].p_price);
-					$("#bigPerfect li").eq(i).find("img")[0].src=(res[i].p_img);
+					$("#bigPerfect li").eq(i).find(".a_price").html("¥" + res[i].p_price);
+					$("#bigPerfect li").eq(i).find("img")[0].src = (res[i].p_img);
 					//通过URL传ID到详情页					
-					$("#bigPerfect li").eq(i).on("click",function(){					
-						window.location.href="detail.html?id="+res[$(this).index()].p_id;
+					$("#bigPerfect li").eq(i).on("click", function() {
+						window.location.href = "detail.html?id=" + res[$(this).index()].p_id;
 					})
-				}				
-			})			
+				}
+			})
 			//加入购物车显示隐藏
 			$(".bbig li").hover(function() {
 				$(this).find(".gBtn").show().parent().siblings("li").find("div").eq(1).hide()
@@ -30,7 +36,7 @@ require(["config"], function() {
 				$(this).find("div").show().parent().siblings("li").find("div").hide()
 			}, function() {
 				$(this).find("div").hide()
-			})			
+			})
 			//倒计时
 			function countDown(times) {
 				var timer = null;
@@ -49,20 +55,22 @@ require(["config"], function() {
 					if(hour <= 9) hour = '0' + hour;
 					if(minute <= 9) minute = '0' + minute;
 					if(second <= 9) second = '0' + second;
-//					console.log(day + "天:" + hour + "小时：" + minute + "分钟：" + second + "秒");
+					//					console.log(day + "天:" + hour + "小时：" + minute + "分钟：" + second + "秒");
 					$("#djs").html(day + "天:" + hour + "小时：" + minute + "分钟：" + second + "秒")
 					times--;
 				}, 1000);
 				if(times <= 0) {
 					clearInterval(timer);
 				}
-			}	
+			}
 			countDown(432000);
 			//懒加载
-			 $("img.lazy").lazyload({effect: "fadeIn",});
+			$("img.lazy").lazyload({
+				effect: "fadeIn",
+			});
 			//点击加入购物车
 			$(".joincar").on("click", function() {
-				
+
 			})
 		})
 	})

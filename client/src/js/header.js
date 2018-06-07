@@ -1,4 +1,14 @@
 $(function() {
+	$(".dt").hover(function(){
+		$("#allSort").show()
+		$("#allSort").hover(function(){
+			
+		},function(){
+			
+		})
+	},function(){
+		$("#allSort").hide()
+	})
 	//当前用户名
 	var cur = sessionStorage.getItem("userInfo");
 	if(cur != null) {

@@ -37,6 +37,8 @@
 	float: left;
 	margin-right: 20px;
 }
+.newwords{position: absolute;left: 20px;background: red;color: #fff;border-radius:10px;line-height: 20px;padding: 0 6px 0 6px;}
+
 /*head*/
 .pic_log,.gif,.form{
 	float: left;
@@ -101,15 +103,17 @@
 	padding-top: 8px;
 	padding-left: 15px;
 	box-sizing: border-box;
-    /*display: none;*/
+   /* display: none;*/
 }
 .all {
 	overflow: hidden;
 }
 .menu1{
-	position: relative;
+	/*position: relative;
 	left: 217px;
-    top: -511px;
+    top: -511px;*/
+   float: right;
+   margin-right: 300px;
 }
 .menu1 ul li{
 	float: left;
@@ -147,14 +151,14 @@
 }
 .next{
 	width: 560px;
-	height: 480px;
-	background: url("../img_top/bjt.jpg") bottom no-repeat yellowgreen;
+	height: 479px;
 	position: absolute;
 	left: 185px;
-	top:-8px;
 	z-index: 999;
 	display: none;
 	opacity: 0.98;
+	border-right: solid 1px #CDCDCD;
+	border-bottom: solid 1px #CDCDCD;
 }
 .cat-sort {
 	width: 542px;

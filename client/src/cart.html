@@ -1,9 +1,48 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8">
-		<title></title>
-	</head>
-	<body>
-	</body>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="css/basic.css"/>
+	<link rel="stylesheet" type="text/css" href="css/cart.css"/>
+	<script src="js/lib/require.js" data-main="js/cart"></script>
+</head>
+<body>
+	<!--头部引入-->
+	<div class="header"></div>
+	<div class="my public">
+			<h3>我的购物车</h3>
+			<span>提示：请选择您的收货区域，查看更准确的信息</span>
+	</div>
+	<div class="shopcar public">		
+		<table cellpadding="0" cellspacing="0">
+			<thead>
+				<tr>
+					<th><input type="checkbox"/>全选</th>
+					<th>商品</th><th>单价</th><th>优惠</th><th>数量</th><th>小计</th><th>操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				
+			</tbody>
+		</table>
+		<div class="money">
+			<input type="button" id="removeChecked" value="删除选中的商品" />
+			<input type="button" id="clearAll" value="清空购物车" />
+			<span style="margin-left: 600px;color: red;font-style: normal;">¥</span>
+		</div>
+		<div class="cartJsuan">
+		    <input class="goshop" value="继续购物" type="button">
+		    <input class="jiesuan" value="去结算" type="button">
+		</div>
+	</div>
+	<div class="kong public">
+		购物车暂无商品数据　 <a href="#">现在就去购物 >></a> <br />
+		您的购物车是空的，可能是您尚未登录，马上<a href="#">登录</a>再看看。
+	</div>
+	<!--尾部引入-->
+	<div class="footer"></div>
+</body>
 </html>
