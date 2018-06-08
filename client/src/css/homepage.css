@@ -1,21 +1,69 @@
-/*.footer{
-	clear: both;
-	height: 286px;
-}
-.header{
-	width: 100%;
-}
-.banner{}
-.banner .banner-box{width:1920px;overflow: hidden;margin:0 auto;position: relative;height: 398px;}
-.banner .banner-box ul{width: 1000%;position: absolute;}
-.banner .banner-box ul li{float: left;line-height: 0;}
-.banner .banner-box ol{position: absolute;overflow: hidden;left: 50%;top:85%;margin-left:-400px;}
-.banner .banner-box ol li{float: left;width:15px;height:15px;border-radius: 15px;border: 2px solid #6c6c6c;margin:0 10px;cursor: pointer;}
-.banner .banner-box ol li.current{background-color: #6c6c6c;}
-.banner-box ul li img{
-	width: 100%;
-}*/
-
+/*轮播图*/
+.banner img {
+				width: 1263px;
+				height: 555px;
+				float: left;
+			}
+			
+			.banner {
+				width: 1263px;
+				height: 555px;
+				overflow: hidden;
+				margin-bottom: 90px;
+				border: 1px solid #ccc;
+				position: relative;
+			}
+			
+			.screen {
+				width: 1263px;
+				height: 555px;
+				overflow: hidden;
+				position: relative;
+			}
+			
+			.screen li {
+				position: absolute;
+				left: 0;
+				top: 0px;
+				display: none;
+			}
+			
+			.pic .active {
+				display: block;
+			}
+			
+			.point li {
+				width: 20px;
+				height: 20px;
+				border-radius: 50%;
+				color: #fff;
+			}
+			
+			.point .active {
+				background: #FAA930;
+			}
+			
+			.banner ol {
+				position: absolute;
+				right: 590px;
+				bottom: 10px;
+				line-height: 20px;
+				text-align: center;
+			}
+			
+			.banner ol li {
+				float: left;
+				width: 22px;
+				height: 22px;
+				border-radius: 100%;
+				background: #525353;
+				margin-left: 10px;
+				cursor: pointer;
+			}
+			
+			.banner ol li.current {
+				background: #FAA930;
+			}
 /*优选*/
 .bestbuy{width:1190px;}
 .bestbuy .b_left{ width:945px;float:left; overflow:hidden; display:block;}

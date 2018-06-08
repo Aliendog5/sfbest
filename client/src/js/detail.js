@@ -12,7 +12,7 @@ require(["config"], function() {
 			var id = window.location.href.split("?")[1].split("=")[1];
 			$.ajax({
 				type: "post",
-				url: "http://127.0.0.1/sfbest/server/goods2.php",
+				url: "../../server/goods2.php",
 				data: {
 					pid: id
 				},
@@ -40,7 +40,7 @@ require(["config"], function() {
 					cur = JSON.parse(sessionStorage.getItem("userInfo"));
 					$.ajax({
 						type: "post",
-						url: "http://127.0.0.1/sfbest/server/car.php",
+						url: "../../server/car.php",
 						data: {
 							u_id: cur.uid,
 							p_id: id,

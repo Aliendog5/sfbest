@@ -12,7 +12,7 @@ require(["config"], function() {
 			//发送请求数据到页面
 			$.ajax({
 				type: "get",
-				url: "http://127.0.0.1/sfbest/server/goods.php",
+				url: "../../server/goods.php",
 				dataType: "json"
 			}).then(function(res) {
 				console.log(res)
@@ -68,10 +68,20 @@ require(["config"], function() {
 			$("img.lazy").lazyload({
 				effect: "fadeIn",
 			});
-			//点击加入购物车
-			$(".joincar").on("click", function() {
-
+			//轮播图
+			$(".point").find("li").on("click", function() {
+				$(this).addClass("active").siblings("li").removeClass("active");
+				$(".pic").find("li").eq($(this).index()).addClass("active").siblings("li").removeClass("active");
 			})
+			var i = 0;
+			setInterval(function() {
+				i++;
+				if(i == 8) {
+					i = 0;
+				}
+				$(".point").find("li").eq(i).addClass("active").siblings("li").removeClass("active");
+				$(".pic").find("li").eq(i).addClass("active").siblings("li").removeClass("active");
+			}, 2000)
 		})
 	})
 })

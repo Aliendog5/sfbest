@@ -5,7 +5,7 @@ require(["config"], function() {
 			submitHandler: function() {
 				if($.idcode.validateCode()) {
 					$.ajax({
-						url: "http://127.0.0.1/sfbest/server/login.php",
+						url: "../../server/login.php",
 						data: {
 							uname: $("[name=uname]").val(),
 							upwd: $.md5($("[name=upwd]").val())
@@ -18,7 +18,7 @@ require(["config"], function() {
 							var arr=JSON.parse($.cookie("nologin")||"[]");
 							for(var i=0; i<arr.length; i++){
 								$.ajax({
-									url:"http://127.0.0.1/sfbest/server/car.php",
+									url:"../../server/car.php",
 									type:"post",
 									dataType:"json",
 									data:{

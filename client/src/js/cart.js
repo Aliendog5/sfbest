@@ -9,7 +9,7 @@ require(["config"], function() {
 				var uid = JSON.parse(cur).uid;
 				$.ajax({
 					type: "post",
-					url: "http://127.0.0.1/sfbest/server/showcar.php",
+					url: "../../server/showcar.php",
 					data: {
 						uid: uid
 					},
@@ -30,7 +30,7 @@ require(["config"], function() {
 							$(this).parent().parent().remove();
 							$.ajax({
 								type: "post",
-								url: "http://127.0.0.1/sfbest/server/delete1.php",
+								url: "../../server/delete1.php",
 								data: {
 									u_id: uid,
 									p_id: data
@@ -53,7 +53,7 @@ require(["config"], function() {
 						if(confirm("你确定要清空购物车?????")) {
 							$.ajax({
 								type: "post",
-								url: "http://127.0.0.1/sfbest/server/delete2.php",
+								url: "../../server/delete2.php",
 								data: {
 									u_id: uid
 								},
@@ -136,6 +136,8 @@ require(["config"], function() {
 				}
 				//总价
 				$(".money span").html("¥" + m);
+				//
+
 			}
 
 		})

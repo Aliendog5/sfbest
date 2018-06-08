@@ -108,7 +108,7 @@ html,body{
 	margin-right: 20px;
 }
 #myform p em,#myform div em{
-	color: red;
+	color: #fff;
 }
 #myform button{
 	width: 271px;
@@ -127,11 +127,11 @@ html,body{
 	height: 30px;
 	margin-left: 190px;
 }
-.mima em{
+#tips em{
 	display: inline-block;
 	text-align: center;
     width: 34px;
     margin-right: 2px;
     color: #fff;
-    background: #c4c4c4;
+    background: grey;
 }
